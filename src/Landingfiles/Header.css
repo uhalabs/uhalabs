@@ -1,0 +1,186 @@
+
+/* ─── Header ──────────────────────────────────────────── */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0 2rem;
+  transition: background 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease;
+  background: transparent;
+}
+
+/* Scrolled state – frosted glass */
+.header--scrolled {
+  background: rgba(7, 7, 18, 0.72);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+  padding: 0 2rem;
+}
+
+/* Inner flex container */
+.header__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* ─── Logo ─────────────────────────────────────────────── */
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.header__logo-mark {
+  font-size: 1.75rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #6ee7f7, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.header__logo-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f0f4ff;
+  letter-spacing: -0.01em;
+}
+
+/* ─── Desktop Nav ──────────────────────────────────────── */
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: auto;
+}
+
+.header__nav-link {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(230, 235, 255, 0.75);
+  text-decoration: none;
+  border-radius: 6px;
+  letter-spacing: 0.01em;
+  transition: color 0.2s, background 0.2s;
+}
+
+.header__nav-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ─── CTA Button ───────────────────────────────────────── */
+.header__cta {
+  margin-left: 1rem;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-radius: 8px;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35);
+}
+
+.header__cta:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 28px rgba(99, 102, 241, 0.5);
+}
+
+/* ─── Hamburger ────────────────────────────────────────── */
+.header__burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  padding: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.header__burger span {
+  display: block;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(230, 235, 255, 0.85);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.header__burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.header__burger.open span:nth-child(2) { opacity: 0; }
+.header__burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ─── Mobile Nav ───────────────────────────────────────── */
+.header__mobile-nav {
+  display: none;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.5rem 1.5rem;
+  background: rgba(7, 7, 18, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.header__mobile-nav--open {
+  max-height: 400px;
+}
+
+.header__mobile-link {
+  padding: 0.65rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(230, 235, 255, 0.8);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.header__mobile-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.header__cta--mobile {
+  margin-left: 0;
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+/* ─── Responsive ───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .header__nav,
+  .header__cta:not(.header__cta--mobile) {
+    display: none;
+  }
+
+  .header__burger {
+    display: flex;
+  }
+
+  .header__mobile-nav {
+    display: flex;
+  }
+}
