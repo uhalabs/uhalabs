@@ -65,7 +65,7 @@ export default function MainLandingPage() {
                     </span>
 
                     <h1 className="text-6xl md:text-8xl font-black leading-[1.04] tracking-[-0.04em] text-slate-50 mb-6">
-                        Welcome to{' '}
+                        Welcome to{' '}<br />
                         <span className="bg-gradient-to-r from-cyan-300 via-violet-400 to-pink-400 bg-clip-text text-transparent">
                             UHA-Labs
                         </span>
