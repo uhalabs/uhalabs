@@ -20,7 +20,7 @@ export default function Header() {
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${scrolled
-                    ? 'bg-[#05050f]/80 backdrop-blur-xl shadow-[0_1px_0_rgba(255,255,255,0.05)]'
+                    ? 'bg-[var(--color-header-bg)] backdrop-blur-xl shadow-[0_1px_0_var(--color-header-shadow)]'
                     : 'bg-transparent'
                 }`}
         >
@@ -31,7 +31,7 @@ export default function Header() {
                     <span className="text-2xl font-black tracking-tight bg-gradient-to-r from-cyan-300 via-violet-400 to-pink-400 bg-clip-text text-transparent">
                         UHA
                     </span>
-                    <span className="text-lg font-bold text-slate-200 tracking-tight">Labs</span>
+                    <span className="text-lg font-bold text-[var(--color-text-primary)] tracking-tight">Labs</span>
                 </a>
 
                 {/* ── Desktop Nav ── */}
@@ -40,7 +40,7 @@ export default function Header() {
                         <a
                             key={link.label}
                             href={link.href}
-                            className="px-4 py-2 text-sm font-medium text-slate-400 hover:text-white hover:bg-white/[0.06] rounded-lg transition-all duration-200 no-underline tracking-wide"
+                            className="px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-heading)] hover:bg-[var(--color-nav-hover-bg)] rounded-lg transition-all duration-200 no-underline tracking-wide"
                         >
                             {link.label}
                         </a>
@@ -61,16 +61,16 @@ export default function Header() {
                     aria-label="Toggle menu"
                     className="md:hidden ml-auto flex flex-col justify-center gap-[5px] w-9 h-9 p-1 bg-transparent border-0 cursor-pointer"
                 >
-                    <span className={`block h-0.5 rounded-full bg-slate-300 transition-all duration-300 ${menuOpen ? 'translate-y-[7px] rotate-45' : ''}`} />
-                    <span className={`block h-0.5 rounded-full bg-slate-300 transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-                    <span className={`block h-0.5 rounded-full bg-slate-300 transition-all duration-300 ${menuOpen ? '-translate-y-[7px] -rotate-45' : ''}`} />
+                    <span className={`block h-0.5 rounded-full bg-[var(--color-hamburger)] transition-all duration-300 ${menuOpen ? 'translate-y-[7px] rotate-45' : ''}`} />
+                    <span className={`block h-0.5 rounded-full bg-[var(--color-hamburger)] transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
+                    <span className={`block h-0.5 rounded-full bg-[var(--color-hamburger)] transition-all duration-300 ${menuOpen ? '-translate-y-[7px] -rotate-45' : ''}`} />
                 </button>
             </div>
 
             {/* ── Mobile Nav ── */}
             <div
                 className={`md:hidden overflow-hidden transition-all duration-400 ease-in-out ${menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                    } bg-[#05050f]/95 backdrop-blur-xl border-t border-white/[0.05]`}
+                    } bg-[var(--color-mobile-menu-bg)] backdrop-blur-xl border-t border-[var(--color-border)]`}
             >
                 <div className="flex flex-col gap-1 px-6 py-4">
                     {navLinks.map((link) => (
@@ -78,7 +78,7 @@ export default function Header() {
                             key={link.label}
                             href={link.href}
                             onClick={() => setMenuOpen(false)}
-                            className="px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/[0.06] rounded-lg transition-all duration-200 no-underline"
+                            className="px-3 py-3 text-base font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-heading)] hover:bg-[var(--color-nav-hover-bg)] rounded-lg transition-all duration-200 no-underline"
                         >
                             {link.label}
                         </a>
