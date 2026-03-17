@@ -7,7 +7,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLandingPage />} />
-        <Route path="/analyser" element={<ExcelProcessor />} /><Route path="/" element={<MainLandingPage />} />
+        <Route path="/analyser" element={<ExcelProcessor />} />
 
       </Routes>
     </BrowserRouter>
