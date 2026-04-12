@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import MainLandingPage from './Landingfiles/MainLandingPage'
+import BirthdayWish from './components/BirthdayWish'
 
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLandingPage />} />
+        <Route path="/birthday" element={<BirthdayWish />} />
       </Routes>
     </BrowserRouter>
   )
