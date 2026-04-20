@@ -1,5 +1,7 @@
+import { useEffect, useRef } from 'react'
 import Header from './Header'
 import { Typography } from 'antd'
+import heroVideo from '../assets/AI_Video.mp4'
 
 const { Title, Paragraph } = Typography
 
@@ -35,26 +37,38 @@ const stats = [
 ]
 
 export default function MainLandingPage() {
+    const videoRef = useRef<HTMLVideoElement>(null)
+
+    useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.defaultMuted = true
+            videoRef.current.muted = true
+            videoRef.current.play().catch(e => console.log("Autoplay blocked by browser:", e))
+        }
+    }, [])
+
     return (
         <div className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text-primary)] font-sans overflow-x-hidden transition-colors duration-300">
             <Header />
 
             <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-                <div className="absolute inset-0 w-full h-full">
-        
+                <div className="absolute inset-0 w-full h-full bg-[var(--color-bg)]">
+                    {/* Native Local Video Background */}
                     <video
+                        ref={videoRef}
+                        src={heroVideo}
                         autoPlay
                         loop
                         muted
                         playsInline
-                        className="w-full h-full object-cover"
-                    >
-                        <source src="/background-video.mp4" type="video/mp4" />
-                    </video>
+                        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                    />
                 </div>
                 
-                {/* Premium Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+                {/* Theme-aware Overlay */}
+                <div className="absolute inset-0" style={{
+                    background: `linear-gradient(to right, var(--color-hero-overlay-from), var(--color-hero-overlay-via), transparent)`
+                }} />
 
                 {/* Content - Left Side Middle */}
                 <div className="relative z-10 px-12 md:px-24 max-w-5xl">
@@ -79,7 +93,7 @@ export default function MainLandingPage() {
                     <Paragraph 
                         style={{
                             fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
-                            color: '#ffffff',
+                            color: 'var(--color-hero-text-primary)',
                             fontWeight: 300,
                             letterSpacing: '0.02em',
                             marginBottom: '1.5rem',
@@ -92,7 +106,7 @@ export default function MainLandingPage() {
                     <Paragraph 
                         style={{
                             fontSize: 'clamp(1rem, 2vw, 1.5rem)',
-                            color: 'rgba(255, 255, 255, 0.85)',
+                            color: 'var(--color-hero-text-secondary)',
                             fontWeight: 300,
                             lineHeight: 1.6,
                             maxWidth: '42rem',

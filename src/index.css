@@ -34,6 +34,10 @@
   --color-nav-hover-bg: rgba(0, 0, 0, 0.05);
   --color-scroll-border: rgba(0, 0, 0, 0.2);
   --color-scroll-dot: rgba(0, 0, 0, 0.4);
+  --color-hero-overlay-from: rgba(255, 255, 255, 0.85);
+  --color-hero-overlay-via: rgba(255, 255, 255, 0.6);
+  --color-hero-text-primary: #1e293b;
+  --color-hero-text-secondary: rgba(30, 41, 59, 0.85);
 }
 
 /* ── Dark Theme ──────────────────────────────────────── */
@@ -71,6 +75,10 @@
     --color-nav-hover-bg: rgba(255, 255, 255, 0.06);
     --color-scroll-border: rgba(255, 255, 255, 0.3);
     --color-scroll-dot: rgba(255, 255, 255, 0.6);
+    --color-hero-overlay-from: rgba(0, 0, 0, 0.75);
+    --color-hero-overlay-via: rgba(0, 0, 0, 0.5);
+    --color-hero-text-primary: #ffffff;
+    --color-hero-text-secondary: rgba(255, 255, 255, 0.85);
   }
 }
 
