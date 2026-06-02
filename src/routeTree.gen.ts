@@ -10,7 +10,9 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SolutionsRouteImport } from './routes/solutions'
+import { Route as OxybfsaiRouteImport } from './routes/oxybfsai'
 import { Route as IndustriesRouteImport } from './routes/industries'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SolutionsRoute = SolutionsRouteImport.update({
@@ -18,9 +20,19 @@ const SolutionsRoute = SolutionsRouteImport.update({
   path: '/solutions',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OxybfsaiRoute = OxybfsaiRouteImport.update({
+  id: '/oxybfsai',
+  path: '/oxybfsai',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndustriesRoute = IndustriesRouteImport.update({
   id: '/industries',
   path: '/industries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -31,31 +43,39 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/industries': typeof IndustriesRoute
+  '/oxybfsai': typeof OxybfsaiRoute
   '/solutions': typeof SolutionsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/industries': typeof IndustriesRoute
+  '/oxybfsai': typeof OxybfsaiRoute
   '/solutions': typeof SolutionsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/industries': typeof IndustriesRoute
+  '/oxybfsai': typeof OxybfsaiRoute
   '/solutions': typeof SolutionsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/industries' | '/solutions'
+  fullPaths: '/' | '/about' | '/industries' | '/oxybfsai' | '/solutions'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/industries' | '/solutions'
-  id: '__root__' | '/' | '/industries' | '/solutions'
+  to: '/' | '/about' | '/industries' | '/oxybfsai' | '/solutions'
+  id: '__root__' | '/' | '/about' | '/industries' | '/oxybfsai' | '/solutions'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   IndustriesRoute: typeof IndustriesRoute
+  OxybfsaiRoute: typeof OxybfsaiRoute
   SolutionsRoute: typeof SolutionsRoute
 }
 
@@ -68,11 +88,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SolutionsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/oxybfsai': {
+      id: '/oxybfsai'
+      path: '/oxybfsai'
+      fullPath: '/oxybfsai'
+      preLoaderRoute: typeof OxybfsaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/industries': {
       id: '/industries'
       path: '/industries'
       fullPath: '/industries'
       preLoaderRoute: typeof IndustriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -87,7 +121,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   IndustriesRoute: IndustriesRoute,
+  OxybfsaiRoute: OxybfsaiRoute,
   SolutionsRoute: SolutionsRoute,
 }
 export const routeTree = rootRouteImport
