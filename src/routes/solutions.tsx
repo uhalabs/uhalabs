@@ -10,7 +10,7 @@ export const Route = createFileRoute("/solutions")({
       {
         name: "description",
         content:
-          "Explore UHA Labs AI solutions: recovery, voice banking, contact center automation, compliance monitoring, support, collections, analytics, and more.",
+          "Explore UHA Labs AI solutions: recovery, voice automation, contact center automation, compliance monitoring, support, collections, analytics, and more.",
       },
       { property: "og:title", content: "Solutions — UHA Labs AI Systems" },
       {

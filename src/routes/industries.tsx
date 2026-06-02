@@ -10,7 +10,7 @@ export const Route = createFileRoute("/industries")({
       {
         name: "description",
         content:
-          "UHA Labs deploys AI workforces across Banking, Financial Services, Insurance, NBFCs, FinTech, Healthcare, Retail, Logistics, Telecom, Government, and more.",
+          "UHA Labs deploys AI workforces across Financial Services, Insurance, NBFCs, FinTech, Healthcare, Retail, Logistics, Telecom, Government, and more.",
       },
       { property: "og:title", content: "Industries — UHA Labs" },
       {
@@ -31,7 +31,7 @@ function IndustriesPage() {
       <PageHeader
         eyebrow="Industries"
         title="Built for Regulated, High-Stakes Industries"
-        subtitle="From banking to government, we deploy AI workforces where reliability, security, and compliance matter most."
+        subtitle="From financial services to government, we deploy AI workforces where reliability, security, and compliance matter most."
       />
       <IndustriesGrid showHeading={false} />
       <CTASection />

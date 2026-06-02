@@ -28,8 +28,8 @@ import {
 
 export const NAV_LINKS = [
   { label: "Home", to: "/" },
+  { label: "Platform", to: "/platform" },
   { label: "Solutions", to: "/solutions" },
-  { label: "OXYBFSAI", to: "/oxybfsai" },
   { label: "Industries", to: "/industries" },
   { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
@@ -95,7 +95,7 @@ export interface SolutionItem {
 
 export const SOLUTIONS: SolutionItem[] = [
   { title: "AI Recovery Systems", description: "Intelligent recovery agents that engage, negotiate, and resolve at scale.", icon: Wallet },
-  { title: "AI Voice Banking", description: "Conversational voice agents for secure, natural banking interactions.", icon: Phone },
+  { title: "AI Voice Automation", description: "Conversational voice agents for secure, natural customer interactions across channels.", icon: Phone },
   { title: "AI Contact Center Automation", description: "Fully automated inbound and outbound contact center operations.", icon: Headphones },
   { title: "AI Compliance Monitoring", description: "Continuous compliance intelligence across every workflow and call.", icon: ShieldCheck },
   { title: "AI Customer Support", description: "Always-on support agents that resolve issues across channels.", icon: Bot },
@@ -114,8 +114,8 @@ export interface IndustryItem {
 }
 
 export const INDUSTRIES: IndustryItem[] = [
-  { title: "Banking", icon: Landmark },
-  { title: "Financial Services", icon: CircleDollarSign },
+  { title: "Financial Services", icon: Landmark },
+  { title: "FinTech & Banking", icon: CircleDollarSign },
   { title: "Insurance", icon: ShieldCheck },
   { title: "NBFCs", icon: Coins },
   { title: "FinTech", icon: Cpu },
@@ -129,10 +129,10 @@ export const INDUSTRIES: IndustryItem[] = [
 ];
 
 export const OXYBFSAI_FEATURES = [
-  "AI Recovery Agent",
+  "AI Orchestration Engine",
   "AI Compliance Agent",
-  "AI Call Center",
-  "AI Collections",
+  "AI Contact Center",
+  "AI Collections Automation",
   "Regulatory Intelligence",
   "Reporting Automation",
   "Workflow Orchestration",

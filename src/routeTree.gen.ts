@@ -9,16 +9,28 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TechnologyRouteImport } from './routes/technology'
 import { Route as SolutionsRouteImport } from './routes/solutions'
+import { Route as PlatformRouteImport } from './routes/platform'
 import { Route as OxybfsaiRouteImport } from './routes/oxybfsai'
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TechnologyRoute = TechnologyRouteImport.update({
+  id: '/technology',
+  path: '/technology',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SolutionsRoute = SolutionsRouteImport.update({
   id: '/solutions',
   path: '/solutions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlatformRoute = PlatformRouteImport.update({
+  id: '/platform',
+  path: '/platform',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OxybfsaiRoute = OxybfsaiRouteImport.update({
@@ -53,7 +65,9 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
   '/oxybfsai': typeof OxybfsaiRoute
+  '/platform': typeof PlatformRoute
   '/solutions': typeof SolutionsRoute
+  '/technology': typeof TechnologyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -61,7 +75,9 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
   '/oxybfsai': typeof OxybfsaiRoute
+  '/platform': typeof PlatformRoute
   '/solutions': typeof SolutionsRoute
+  '/technology': typeof TechnologyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -70,7 +86,9 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
   '/oxybfsai': typeof OxybfsaiRoute
+  '/platform': typeof PlatformRoute
   '/solutions': typeof SolutionsRoute
+  '/technology': typeof TechnologyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -80,9 +98,19 @@ export interface FileRouteTypes {
     | '/contact'
     | '/industries'
     | '/oxybfsai'
+    | '/platform'
     | '/solutions'
+    | '/technology'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/industries' | '/oxybfsai' | '/solutions'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/industries'
+    | '/oxybfsai'
+    | '/platform'
+    | '/solutions'
+    | '/technology'
   id:
     | '__root__'
     | '/'
@@ -90,7 +118,9 @@ export interface FileRouteTypes {
     | '/contact'
     | '/industries'
     | '/oxybfsai'
+    | '/platform'
     | '/solutions'
+    | '/technology'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -99,16 +129,32 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   IndustriesRoute: typeof IndustriesRoute
   OxybfsaiRoute: typeof OxybfsaiRoute
+  PlatformRoute: typeof PlatformRoute
   SolutionsRoute: typeof SolutionsRoute
+  TechnologyRoute: typeof TechnologyRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/technology': {
+      id: '/technology'
+      path: '/technology'
+      fullPath: '/technology'
+      preLoaderRoute: typeof TechnologyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/solutions': {
       id: '/solutions'
       path: '/solutions'
       fullPath: '/solutions'
       preLoaderRoute: typeof SolutionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/platform': {
+      id: '/platform'
+      path: '/platform'
+      fullPath: '/platform'
+      preLoaderRoute: typeof PlatformRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/oxybfsai': {
@@ -155,8 +201,20 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   IndustriesRoute: IndustriesRoute,
   OxybfsaiRoute: OxybfsaiRoute,
+  PlatformRoute: PlatformRoute,
   SolutionsRoute: SolutionsRoute,
+  TechnologyRoute: TechnologyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

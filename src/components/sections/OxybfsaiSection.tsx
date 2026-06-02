@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Check, ArrowRight, Building2 } from "lucide-react";
+import { Check, ArrowRight, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
@@ -17,17 +17,17 @@ export function OxybfsaiSection({ showCta = true }: OxybfsaiSectionProps) {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <RevealOnScroll>
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-primary-glow">
-              <Building2 className="h-3.5 w-3.5" />
-              OXYBFSAI
+              <Layers className="h-3.5 w-3.5" />
+              AI Platform
             </span>
             <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-              Enterprise AI Platform for BFSI
+              Enterprise AI Platform for Operations
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
-              OXYBFSAI enables financial institutions to deploy AI-powered
-              recovery systems, compliance intelligence, operational automation,
+              UHA Labs enables enterprises to deploy AI-powered orchestration
+              systems, compliance intelligence, operational automation,
               customer support, voice agents, reporting engines, and digital
-              workforce solutions.
+              workforce solutions at scale.
             </p>
 
             {showCta && (
@@ -36,8 +36,8 @@ export function OxybfsaiSection({ showCta = true }: OxybfsaiSectionProps) {
                 size="lg"
                 className="mt-8 bg-gradient-primary text-primary-foreground shadow-glow hover:opacity-90"
               >
-                <Link to="/oxybfsai">
-                  Explore OXYBFSAI
+                <Link to="/platform">
+                  Explore Platform
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>

@@ -15,7 +15,7 @@ export function IndustriesGrid({ showHeading = true }: IndustriesGridProps) {
             <SectionHeading
               eyebrow="Industries"
               title="Built for Regulated, High-Stakes Industries"
-              subtitle="From banking to government, we deploy AI workforces where reliability and compliance matter most."
+              subtitle="From financial services to government, we deploy AI workforces where reliability and compliance matter most."
             />
           </RevealOnScroll>
         )}
