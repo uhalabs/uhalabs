@@ -4,13 +4,9 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
-  HeadContent,
-  Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect } from "react";
 
-import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 
@@ -40,7 +36,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    console.error("Route error:", error);
   }, [error]);
 
   return (
@@ -75,65 +71,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "UHA Labs — Building Digital Workforces for the AI Era" },
-      {
-        name: "description",
-        content:
-          "UHA Labs builds AI orchestration systems and digital workforces that automate business operations, voice, compliance, support, and enterprise intelligence.",
-      },
-      { name: "author", content: "UHA Labs" },
-      { property: "og:title", content: "UHA Labs — Building Digital Workforces for the AI Era" },
-      {
-        property: "og:description",
-        content:
-          "AI orchestration and digital workforce systems for enterprise operations.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "UHA Labs" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "UHA Labs",
-          description: "Building Digital Workforces for the AI Era",
-          slogan: "One Engineer. Infinite Scale.",
-        }),
-      },
-    ],
-  }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
-
-function RootShell({ children }: { children: ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();

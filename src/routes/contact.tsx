@@ -9,23 +9,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — Book a Strategy Call | UHA Labs" },
-      {
-        name: "description",
-        content:
-          "Book a strategy call with UHA Labs and start building your AI workforce. Schedule a consultation to orchestrate AI systems across your operations.",
-      },
-      { property: "og:title", content: "Contact — Book a Strategy Call | UHA Labs" },
-      {
-        property: "og:description",
-        content: "Schedule a consultation and start your AI journey with UHA Labs.",
-      },
-      { property: "og:url", content: "/contact" },
-    ],
-    links: [{ rel: "canonical", href: "/contact" }],
-  }),
   component: ContactPage,
 });
 

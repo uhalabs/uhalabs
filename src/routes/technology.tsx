@@ -5,16 +5,6 @@ import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { Code, Terminal, Brain, HardDrive, Share2, Workflow } from "lucide-react";
 
 export const Route = createFileRoute("/technology")({
-  head: () => ({
-    meta: [
-      { title: "Technology — Neural Core & Executable Workforces | UHA Labs" },
-      {
-        name: "description",
-        content:
-          "Explore the core technology behind UHA Labs. Autonomous execution planners, semantic search, and real-time orchestration models.",
-      },
-    ],
-  }),
   component: TechnologyPage,
 });
 

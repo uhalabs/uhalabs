@@ -4,24 +4,6 @@ import { IndustriesGrid } from "@/components/sections/IndustriesGrid";
 import { CTASection } from "@/components/sections/CTASection";
 
 export const Route = createFileRoute("/industries")({
-  head: () => ({
-    meta: [
-      { title: "Industries — UHA Labs" },
-      {
-        name: "description",
-        content:
-          "UHA Labs deploys AI workforces across Financial Services, Insurance, NBFCs, FinTech, Healthcare, Retail, Logistics, Telecom, Government, and more.",
-      },
-      { property: "og:title", content: "Industries — UHA Labs" },
-      {
-        property: "og:description",
-        content:
-          "AI orchestration built for regulated, high-stakes industries.",
-      },
-      { property: "og:url", content: "/industries" },
-    ],
-    links: [{ rel: "canonical", href: "/industries" }],
-  }),
   component: IndustriesPage,
 });
 

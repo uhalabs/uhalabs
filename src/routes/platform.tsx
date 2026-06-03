@@ -5,16 +5,6 @@ import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { Settings, Cpu, ShieldCheck, Zap, Layers, Network } from "lucide-react";
 
 export const Route = createFileRoute("/platform")({
-  head: () => ({
-    meta: [
-      { title: "Platform — AI Orchestration Platform | UHA Labs" },
-      {
-        name: "description",
-        content:
-          "Deploy digital workforces using UHA Labs enterprise orchestration. Standardized scheduler engines, API routers, and autonomous multi-agent task execution.",
-      },
-    ],
-  }),
   component: PlatformPage,
 });
 
