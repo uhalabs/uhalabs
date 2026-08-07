@@ -1,4 +1,13 @@
-import { PhoneCall, Headphones, ShieldCheck, UserPlus, RotateCcw, Target, FileText, Activity } from "lucide-react";
+import {
+  PhoneCall,
+  Headphones,
+  ShieldCheck,
+  UserPlus,
+  RotateCcw,
+  Target,
+  FileText,
+  Activity,
+} from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 

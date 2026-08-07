@@ -20,7 +20,7 @@ export function Header() {
           </span>
         </Link>
 
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-1 lg:flex">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.to}
@@ -34,14 +34,17 @@ export function Header() {
           ))}
         </div>
 
-        <div className="hidden md:block">
-          <Button asChild className="bg-gradient-primary text-primary-foreground shadow-glow hover:opacity-90">
+        <div className="hidden lg:block">
+          <Button
+            asChild
+            className="bg-gradient-primary text-primary-foreground shadow-glow hover:opacity-90"
+          >
             <Link to="/contact">Book a Strategy Call</Link>
           </Button>
         </div>
 
         <button
-          className="inline-flex items-center justify-center rounded-md p-2 text-foreground md:hidden"
+          className="inline-flex items-center justify-center rounded-md p-2 text-foreground lg:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
           aria-expanded={open}
@@ -52,7 +55,7 @@ export function Header() {
 
       <div
         className={cn(
-          "overflow-hidden border-t border-border/60 bg-background/95 backdrop-blur-xl transition-all duration-300 md:hidden",
+          "overflow-hidden border-t border-border/60 bg-background/95 backdrop-blur-xl transition-all duration-300 lg:hidden",
           open ? "max-h-96" : "max-h-0",
         )}
       >

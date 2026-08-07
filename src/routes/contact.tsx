@@ -32,7 +32,7 @@ function ContactPage() {
                   <Mail className="h-5 w-5" />
                 </span>
                 <h3 className="mt-4 text-lg font-semibold text-foreground">Email us</h3>
-                <p className="mt-1 text-sm text-muted-foreground">hello@uhalabs.ai</p>
+                <p className="mt-1 text-sm text-muted-foreground">uahalabs@gmail.com</p>
               </div>
               <div className="glass-card rounded-2xl p-6">
                 <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-primary text-primary-foreground shadow-glow">
@@ -40,8 +40,7 @@ function ContactPage() {
                 </span>
                 <h3 className="mt-4 text-lg font-semibold text-foreground">Work with us</h3>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Enterprise AI orchestration &amp; digital workforce deployments,
-                  worldwide.
+                  Enterprise AI orchestration &amp; digital workforce deployments, worldwide.
                 </p>
               </div>
             </RevealOnScroll>
@@ -51,12 +50,10 @@ function ContactPage() {
                 {submitted ? (
                   <div className="flex flex-col items-center justify-center py-12 text-center">
                     <CheckCircle2 className="h-14 w-14 text-primary-glow" />
-                    <h3 className="mt-5 text-2xl font-bold text-foreground">
-                      Thank you!
-                    </h3>
+                    <h3 className="mt-5 text-2xl font-bold text-foreground">Thank you!</h3>
                     <p className="mt-2 max-w-sm text-sm text-muted-foreground">
-                      Your request has been received. Our team will reach out to
-                      schedule your strategy call shortly.
+                      Your request has been received. Our team will reach out to schedule your
+                      strategy call shortly.
                     </p>
                   </div>
                 ) : (

@@ -33,6 +33,7 @@ export const NAV_LINKS = [
   { label: "Industries", to: "/industries" },
   { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
+  { label: "Career Agent", to: "/career" },
 ] as const;
 
 export interface MaturityLevel {
@@ -46,8 +47,7 @@ export const MATURITY_LEVELS: MaturityLevel[] = [
   {
     level: 1,
     title: "AI Assistants",
-    description:
-      "Enterprise knowledge assistants, chatbots, FAQ systems, and internal copilots.",
+    description: "Enterprise knowledge assistants, chatbots, FAQ systems, and internal copilots.",
     icon: Bot,
   },
   {
@@ -67,8 +67,7 @@ export const MATURITY_LEVELS: MaturityLevel[] = [
   {
     level: 4,
     title: "Multi-Agent Operations",
-    description:
-      "Multiple AI agents collaborating across departments and business functions.",
+    description: "Multiple AI agents collaborating across departments and business functions.",
     icon: Network,
   },
   {
@@ -81,8 +80,7 @@ export const MATURITY_LEVELS: MaturityLevel[] = [
   {
     level: 6,
     title: "Digital Workforce Infrastructure",
-    description:
-      "Fully autonomous enterprise operations powered by orchestrated AI workforces.",
+    description: "Fully autonomous enterprise operations powered by orchestrated AI workforces.",
     icon: Cpu,
   },
 ];
@@ -94,18 +92,67 @@ export interface SolutionItem {
 }
 
 export const SOLUTIONS: SolutionItem[] = [
-  { title: "AI Recovery Systems", description: "Intelligent recovery agents that engage, negotiate, and resolve at scale.", icon: Wallet },
-  { title: "AI Voice Automation", description: "Conversational voice agents for secure, natural customer interactions across channels.", icon: Phone },
-  { title: "AI Contact Center Automation", description: "Fully automated inbound and outbound contact center operations.", icon: Headphones },
-  { title: "AI Compliance Monitoring", description: "Continuous compliance intelligence across every workflow and call.", icon: ShieldCheck },
-  { title: "AI Customer Support", description: "Always-on support agents that resolve issues across channels.", icon: Bot },
-  { title: "AI Lead Qualification", description: "Qualify, score, and route leads automatically in real time.", icon: Target },
-  { title: "AI Collections Automation", description: "Automated collections journeys with empathy and precision.", icon: Banknote },
-  { title: "AI Operations Automation", description: "Automate repetitive operational processes end to end.", icon: Settings2 },
-  { title: "AI Workflow Intelligence", description: "Orchestrate complex multi-step workflows across systems.", icon: Workflow },
-  { title: "AI Reporting & Analytics", description: "Generate reports and surface insights without human effort.", icon: LineChart },
-  { title: "AI Knowledge Systems", description: "Enterprise knowledge engines that answer with context.", icon: BookOpen },
-  { title: "AI Employee Assistants", description: "Internal copilots that supercharge every team member.", icon: Users },
+  {
+    title: "AI Recovery Systems",
+    description: "Intelligent recovery agents that engage, negotiate, and resolve at scale.",
+    icon: Wallet,
+  },
+  {
+    title: "AI Voice Automation",
+    description:
+      "Conversational voice agents for secure, natural customer interactions across channels.",
+    icon: Phone,
+  },
+  {
+    title: "AI Contact Center Automation",
+    description: "Fully automated inbound and outbound contact center operations.",
+    icon: Headphones,
+  },
+  {
+    title: "AI Compliance Monitoring",
+    description: "Continuous compliance intelligence across every workflow and call.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "AI Customer Support",
+    description: "Always-on support agents that resolve issues across channels.",
+    icon: Bot,
+  },
+  {
+    title: "AI Lead Qualification",
+    description: "Qualify, score, and route leads automatically in real time.",
+    icon: Target,
+  },
+  {
+    title: "AI Collections Automation",
+    description: "Automated collections journeys with empathy and precision.",
+    icon: Banknote,
+  },
+  {
+    title: "AI Operations Automation",
+    description: "Automate repetitive operational processes end to end.",
+    icon: Settings2,
+  },
+  {
+    title: "AI Workflow Intelligence",
+    description: "Orchestrate complex multi-step workflows across systems.",
+    icon: Workflow,
+  },
+  {
+    title: "AI Reporting & Analytics",
+    description: "Generate reports and surface insights without human effort.",
+    icon: LineChart,
+  },
+  {
+    title: "AI Knowledge Systems",
+    description: "Enterprise knowledge engines that answer with context.",
+    icon: BookOpen,
+  },
+  {
+    title: "AI Employee Assistants",
+    description: "Internal copilots that supercharge every team member.",
+    icon: Users,
+  },
 ];
 
 export interface IndustryItem {

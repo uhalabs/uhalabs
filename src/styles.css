@@ -58,20 +58,41 @@
   --animate-gradient-shift: gradient-shift 8s ease infinite;
 
   @keyframes fade-in {
-    from { opacity: 0; transform: translateY(16px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-14px); }
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-14px);
+    }
   }
   @keyframes glow-pulse {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
+    0%,
+    100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
   }
   @keyframes gradient-shift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
   }
 }
 
@@ -125,7 +146,11 @@
 
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, oklch(0.65 0.2 250), oklch(0.75 0.16 220));
-  --gradient-hero: radial-gradient(ellipse 80% 60% at 50% -10%, oklch(0.45 0.18 255 / 0.55), transparent 70%);
+  --gradient-hero: radial-gradient(
+    ellipse 80% 60% at 50% -10%,
+    oklch(0.45 0.18 255 / 0.55),
+    transparent 70%
+  );
   --gradient-text: linear-gradient(120deg, oklch(0.97 0.01 250), oklch(0.78 0.15 235));
 
   /* Glass */
@@ -187,7 +212,9 @@
   .reveal {
     opacity: 0;
     transform: translateY(28px);
-    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    transition:
+      opacity 0.7s ease-out,
+      transform 0.7s ease-out;
   }
   .reveal.is-visible {
     opacity: 1;

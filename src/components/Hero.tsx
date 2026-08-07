@@ -23,9 +23,9 @@ export function Hero() {
           </h1>
 
           <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg lg:mx-0">
-            We design and build AI orchestration systems that automate business
-            operations, voice interactions, compliance workflows, customer
-            support, recovery processes, and enterprise intelligence.
+            We design and build AI orchestration systems that automate business operations, voice
+            interactions, compliance workflows, customer support, recovery processes, and enterprise
+            intelligence.
           </p>
 
           <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row lg:justify-start">

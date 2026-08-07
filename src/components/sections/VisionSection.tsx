@@ -14,9 +14,7 @@ export function VisionSection() {
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground sm:text-2xl sm:leading-relaxed">
             To help enterprises transition from human-intensive operations to{" "}
-            <span className="text-gradient font-semibold">
-              AI-orchestrated digital workforces
-            </span>{" "}
+            <span className="text-gradient font-semibold">AI-orchestrated digital workforces</span>{" "}
             that create exponential scale, efficiency, and intelligence.
           </p>
         </RevealOnScroll>

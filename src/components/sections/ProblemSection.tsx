@@ -36,8 +36,8 @@ export function ProblemSection() {
 
         <RevealOnScroll delay={120}>
           <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-muted-foreground">
-            As businesses grow, the gap between ambition and operational capacity
-            keeps widening — and headcount alone can't close it.
+            As businesses grow, the gap between ambition and operational capacity keeps widening —
+            and headcount alone can't close it.
           </p>
         </RevealOnScroll>
       </div>

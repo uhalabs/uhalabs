@@ -24,10 +24,9 @@ export function OxybfsaiSection({ showCta = true }: OxybfsaiSectionProps) {
               Enterprise AI Platform for Operations
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
-              UHA Labs enables enterprises to deploy AI-powered orchestration
-              systems, compliance intelligence, operational automation,
-              customer support, voice agents, reporting engines, and digital
-              workforce solutions at scale.
+              UHA Labs enables enterprises to deploy AI-powered orchestration systems, compliance
+              intelligence, operational automation, customer support, voice agents, reporting
+              engines, and digital workforce solutions at scale.
             </p>
 
             {showCta && (
